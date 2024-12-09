@@ -1,10 +1,11 @@
-/* Basic Reset */
+/* Basic reset to avoid inconsistencies across browsers */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Global styles for the body */
 body {
   font-family: Arial, sans-serif;
   background-color: #2f3031;
@@ -12,107 +13,141 @@ body {
   min-height: 100vh;
 }
 
-/* Header */
+/* Header: Main header container */
 .header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-between; /* Space between logo + nav and buttons */
+  align-items: center; /* Vertically align elements */
   padding: 16px;
-  background-color:#111;
+  background-color: #111;
+  flex-wrap: nowrap; /* Prevent items from wrapping */
 }
 
+/* Left section of the header */
 .header-left {
   display: flex;
-  align-items: center;
+  flex-direction: column; /* Stack logo and nav vertically */
+  align-items: flex-start; /* Align to the left */
 }
 
+/* Logo styles */
 .logo {
-  width: 100%;
+  width: 150px; /* Fixed logo size */
+  margin-bottom: 8px; /* Space between the logo and navigation */
 }
 
+/* Main navigation */
 .nav {
-  margin-left: 32px;
+  display: flex;
+  flex-direction: column; /* Organize EXPLORE above other links */
+  align-items: flex-start;
+  flex-wrap: nowrap; /* Prevent items from wrapping */
 }
 
-.nav a {
+/* EXPLORE link styling */
+.explore {
+  color: yellow;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-bottom: 8px; /* Space between EXPLORE and other links */
+}
+
+/* Container for navigation links */
+.nav-links {
+  display: flex;
+  gap: 12px; /* Space between links */
+  flex-wrap: nowrap; /* Prevent wrapping of links */
+}
+
+/* Navigation links styles */
+.nav-links a {
   color: white;
   text-decoration: none;
-  margin-right: 16px;
-  transition: color 0.3s ease;
+  font-size: 14px; /* Smaller font size to fit all links */
+  font-weight: bold;
 }
 
-/* Header Buttons */
+/* Right section buttons */
 .header-right {
   display: flex;
   align-items: center;
+  gap: 12px; /* Space between buttons */
+  flex-shrink: 0; /* Prevent buttons from shrinking */
 }
 
+/* General button styling */
 .btn {
   background-color: #504e4e;
   color: white;
-  padding: 8px 16px;
+  padding: 6px 12px;
   border: none;
   border-radius: 8px;
-  margin-left: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-size: 12px;
 }
 
-/* Main Content */
+/* Main content section */
 .main-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Space between text and image */
   padding: 32px;
 }
 
+/* Text container */
 .text-content {
   max-width: 600px;
 }
 
+/* Main heading */
 h1 {
   font-size: 36px;
   font-weight: normal;
   margin-bottom: 16px;
 }
 
+/* Highlighted text */
 .highlight {
   font-weight: bold;
 }
 
+/* Emoji style */
 .icon-hand {
   font-size: 24px;
 }
 
+/* Paragraphs */
 p {
   font-size: 18px;
   margin-bottom: 32px;
 }
 
+/* Button group */
 .btn-group {
   display: flex;
 }
 
+/* Primary button styling */
 .primary-btn {
   background-color: #05c555;
   color: black;
   padding: 12px 24px;
   border-radius: 8px;
   margin-right: 16px;
-  cursor: pointer;
 }
 
+/* Secondary button styling */
 .secondary-btn {
   background-color: #000000;
   padding: 12px 24px;
   border-radius: 8px;
-  cursor: pointer;
 }
 
-/* Image Section */
+/* Image in the main content */
 .image-container {
   width: 50%;
 }
 
+/* Image styling */
 .image {
   width: 100%;
   border-radius: 12px;
@@ -124,7 +159,7 @@ p {
   background-color: #343639;
   padding: 16px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-around; /* Even spacing between links */
 }
 
 .footer a {
